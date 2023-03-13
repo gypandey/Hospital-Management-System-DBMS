@@ -84,3 +84,12 @@ FOREIGN KEY (doctor) REFERENCES Doctor (email) ON DELETE CASCADE,
 FOREIGN KEY (history) REFERENCES MedicalHistory (id) ON DELETE CASCADE,
 PRIMARY KEY (history, doctor)
 );
+
+CREATE TABLE MedicViewsHistory(
+history int NOT NULL,
+doctor varchar(50) NOT NULL,
+FOREIGN KEY (doctor) REFERENCES Medic (email) ON DELETE CASCADE,
+FOREIGN KEY (history) REFERENCES MedicHistory (id) ON DELETE CASCADE,
+PRIMARY KEY (history, medic)
+);
+
